@@ -24,9 +24,9 @@ async def distribute_data(data: dict, projects: list[ProjectConfig]) -> dict:
         "usd_binance_buy": data.get("binance_p2p", {}).get("buy"),
         "usd_binance_sell": data.get("binance_p2p", {}).get("sell"),
         
-        # Datos de BCV (Placeholder)
-        "usd_bcv": 0.0, 
-        "eur_bcv": 0.0
+        # Datos de BCV
+        "usd_bcv": data.get("bcv", {}).get("usd", 0.0), 
+        "eur_bcv": data.get("bcv", {}).get("eur", 0.0)
     }
 
     # 2. Crear Tareas Asíncronas (No bloqueantes)
